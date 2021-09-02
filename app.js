@@ -7,11 +7,9 @@ const connection = require(`./models/mongoose`)
 
 app.set('port', process.env.PORT || 3000);
 
-// Middlewares
 app.use(cors())
 app.use(bodyParser.json())
 
-// Import Routes
 const ordersRoute = require(`./routes/orders`)
 
 app.use(`/orders`, ordersRoute)
