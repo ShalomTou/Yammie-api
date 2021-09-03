@@ -1,21 +1,21 @@
 const mongoose = require(`mongoose`)
 
 const OrderSchema = mongoose.Schema({
-    user:{
+    userId:{
         type:String,
         required:true
     },
-    dish:{
+    dishesIds:[{
         type:String,
         required:true
-    },
-    price:{
+    }],
+    totalPrice:{
         type:Number,
         required:true
     },
     date:{
         type:Date,
-        default:Date.now
+        default:Date.now()
     }
 })
 
