@@ -1,5 +1,12 @@
 # Yammie-api
 
+This app required to have mongoDB credentials,
+Please create a `.end` file in the root directory and add you credentials to the following:   
+```
+DB_CONNECTION = mongodb+srv://<username>:<password>@rest.koat5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+```
+add this to the `.env`.
+
 How to start the server :
 ```
 npm i
