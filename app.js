@@ -12,11 +12,7 @@ app.use(bodyParser.json())
 const ordersRoute = require(`./routes/orders`)
 app.use(`/`, ordersRoute)
 
-app.get(`/`, (req, res) => {
-    return res.status(200).json({message:"welcome to Yammie API "})
-})
-
 app.listen(app.get('port'), async() => {
-    await dbConnection()
+    await dbConnection();
     console.log(`Api running at http://localhost:${app.get('port')}`);
 })

@@ -1,4 +1,4 @@
-const dishesMap = new Map(Object.entries({
+const dishesMap = {
     0: {
         name: "Pizza",
         price: 10
@@ -43,20 +43,11 @@ const dishesMap = new Map(Object.entries({
         name: "Other",
         price: 10
     },
-}));
+};
 
-
-const parseToDishesNames = async (json) => {
-    return await json.forEach(order => {
-        let total = 0
-        let i = 0
-        order.dishesIds.forEach(dishId => {
-            order.totalPrice += dishesMap.get(dishId).price
-            console.log(dishId,dishesMap.get(dishId))
-            order.dishesIds[i++] = dishesMap.get(dishId).name
-        })
-    });
+function getDishes (dishesIds) {
+    return dishesIds.map(dishId => dishesMap[dishId]);
 }
 
 
-exports.parseToDishesNames = parseToDishesNames
+module.exports = { getDishes };
